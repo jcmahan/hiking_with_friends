@@ -3,6 +3,8 @@ class User < ApplicationRecord
     has_secure_password
     validates :email, presence: true, uniqueness: true
     after_initialize :set_defaults
+    has_many :signups 
+    has_many :hikings, through: :signups, source: :hikes  
 
     private
     def :set_defaults
