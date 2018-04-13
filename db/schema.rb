@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412232303) do
+ActiveRecord::Schema.define(version: 20180413174210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_type"
+    t.bigint "user_id"
+    t.string "photo_type"
+    t.bigint "photo_id"
+    t.string "location_type"
+    t.bigint "location_id"
+    t.index ["location_type", "location_id"], name: "index_comments_on_location_type_and_location_id"
+    t.index ["photo_type", "photo_id"], name: "index_comments_on_photo_type_and_photo_id"
+    t.index ["user_type", "user_id"], name: "index_comments_on_user_type_and_user_id"
+  end
 
   create_table "hikes", force: :cascade do |t|
     t.date "date"
@@ -36,6 +51,25 @@ ActiveRecord::Schema.define(version: 20180412232303) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.text "description"
+    t.bigint "user_id"
+    t.bigint "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_photos_on_location_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "signups", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "hike_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hike_id"], name: "index_signups_on_hike_id"
+    t.index ["user_id"], name: "index_signups_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -53,4 +87,8 @@ ActiveRecord::Schema.define(version: 20180412232303) do
 
   add_foreign_key "hikes", "locations"
   add_foreign_key "hikes", "users"
+  add_foreign_key "photos", "locations"
+  add_foreign_key "photos", "users"
+  add_foreign_key "signups", "hikes"
+  add_foreign_key "signups", "users"
 end
