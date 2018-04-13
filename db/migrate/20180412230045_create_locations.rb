@@ -6,7 +6,7 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.string :location
       t.string :level
       t.integer :length
-      t.string :main_picture
+      t.attachment :main_picture
 
       t.timestamps
     end
