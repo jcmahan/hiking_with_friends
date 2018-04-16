@@ -25,9 +25,9 @@
     <%= yield %>
   </body>
   <footer>
-  <ul class="navbar navbar-expand-lg navbar-light bg-light">
-    <li><%= link_to "Home",   '#' %></li>
-    <li><%= link_to "About",   '#' %></li>
+  <ul class="nav nav-pills">
+    <li role="home"> <%= link_to "Home",   '#' %></li>
+    <li role="about"><%= link_to "About",   '#' %></li>
   </ul>
     </footer>
 </html>

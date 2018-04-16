@@ -1,0 +1,11 @@
+<h1>Locations</h1>
+
+<ul>
+	<% @locations.each do |l| %>
+		<li>Name:<p><%= l.location %></p></li>
+		<li>State<p><%= l.state %></p></li>
+        <li>Nearest City<p><%= l.nearest_city %></p></li>
+		<%= image_tag main_picture.image.url %>
+		<%= link_to 'View location', location_path(location) %>
+	<% end %>
+</ul>
