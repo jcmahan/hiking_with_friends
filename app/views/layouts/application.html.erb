@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HikingWithFriends</title>
+    <title>Hiking With Friends</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
+  <nav>
+      <% if current_user %>
+        Welcome, <%= current_user.name %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+          <%= link_to 'Log In', login_path %>
+      <% else %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+</nav>
 
   <body>
-  <p>
-  <% if current_user %>
-    Welcome, <%= current_user.name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>
     <%= yield %>
   </body>
+  <footer>
+  <ul class="navbar navbar-expand-lg navbar-light bg-light">
+    <li><%= link_to "Home",   '#' %></li>
+    <li><%= link_to "About",   '#' %></li>
+  </ul>
+    </footer>
 </html>
