@@ -1,9 +1,9 @@
-<% provide(:title, "Create New User") %>
-<h1>Create your profile!</h1>
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
 
-<%= form_for(@user) do |f| %>
-    <div>
-        <%= f.label :name, "Hiker's name:" %>
+    <%= form_for(@user) do |f| %>
+
+    <%= f.label :name, "Hiker's name:" %>
         <%= f.text_field :name %>
     </div>
     <div>
@@ -34,7 +34,7 @@
         <%= f.label :facebook_url, "Hiker's Facebook:" %>
         <%= f.url_field :facebook_url, :value => "http://www.facebook.com/...<your address here>" %>
     </div>
-    <div>
+
         <%= f.label :instagram_url, "Hiker's Instagram:" %>
         <%= f.url_field :instagram_url, :value => "http://www.instagram.com/...<your address here>" %>
     </div>
@@ -43,7 +43,6 @@
         <%= f.file_field :profile_picture %><br><br>
 </ul>
 
-<%= f.submit 'Create User!' %>
+<%= f.submit 'Update User Info' %>
 
 <% end %>
-
