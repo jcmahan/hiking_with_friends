@@ -2,13 +2,15 @@
 
 <ul>
 	<% @locations.each do |l| %>
-		<li>Name:<p><%= l.location %></p></li>
-		<li>State<p><%= l.state %></p></li>
-        <li>Nearest City<p><%= l.nearest_city %></p></li>
+		<li>Name: <p><%= l.location_name %></p></li>
 		<%= image_tag l.main_picture.url, id: "main_picture", class: "img-thumbnail" %>
+		<li>Address: <p><%= l.location_address %></p></li>
+        <li>Nearest City: <p><%= l.nearest_city %></p></li>
+		<li>State: <p><%= l.state %></p></li>
+		<li>Hike length: <p><%= l.length %></p></li>
+		<li>Hike difficulty: <p><%= l.level %></p></li>
 		<br/>
-		<%= link_to "Hike Locations", locations_path %>
-		<br/>
-		<br/>
+
+
 	<% end %>
 </ul>

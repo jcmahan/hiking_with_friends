@@ -1,0 +1,18 @@
+<h1><%= @location.location_name%></h1>
+
+<div class="profile">
+<%= image_tag @location.main_picture.url, id: "avatar", class: "img-thumbnail" %>
+
+    <div class="basic_info">
+    <p>Address: <%= @location.location_address %></p>
+    <p>Nearest big city:  <%= @location.nearest_city %></p>
+    <p>Difficulty: <%= @location.level%>
+    <p>Length: <%= @location.length%>
+    
+    </div> 
+
+    <div class="socials_info">
+    <p><%= link_to "Google Map", "#{@location.google_map_link}" %> </p>
+    </div>
+
+</div>

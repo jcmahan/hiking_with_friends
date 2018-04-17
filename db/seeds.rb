@@ -70,29 +70,32 @@ Location.destroy_all
 locations = [
 {
     state: "CA",
+
+    location_name: "downtown Los Angeles", 
+    location_address: "1234 Main St, Los Angeles, CA 90017",
     nearest_city: "Los Angeles",
-    location: "1234 Main St, Los Angeles, CA 90017",
+    google_map_link: "https://goo.gl/maps/BcmmgY7hifv",
     level: "novice",
     length: "2.1 km",
     main_picture: File.new("#{Rails.root}/db/seedimages/LAWinter_2016.jpg"),
 }, {
     state: "CA",
+    location_name: "downtown San Fran",
+    location_address: "5678 Main St, San Francisco, CA 94102",
     nearest_city: "San Francisco, CA",
-    location: "5678 Main St, San Francisco, CA 94102",
+    google_map_link: "https://goo.gl/maps/4kR6DwKMe3G2",
     level: "intermediate",
     length: "3.4 km",
     main_picture: File.new("#{Rails.root}/db/seedimages/SF-GG.jpg"),
 }, {
     state: "OR",
+    location_name: "uptown Bend",
+    location_address: "9123 Main St, Bend, OR, 97703",
     nearest_city: "Bend, OR",
-    location: "9123 Main St, Bend, OR, 97703",
+    google_map_link: "https://goo.gl/maps/rRdrfruBd3y",
     level: "expert",
     length: "10.5 km",
     main_picture: File.new("#{Rails.root}/db/seedimages/Bend_Oregon.jpg"),
 }]
 
 Location.create locations
-
-# Photo.destroy_all
-
-# x = Photo.new(description: "beach", image: File.new("#{Rails.root}/db/seedimages/beach.jpg"))

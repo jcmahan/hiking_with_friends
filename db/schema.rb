@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180413215406) do
   end
 
   create_table "hikes", force: :cascade do |t|
+    t.string "name"
     t.date "date"
     t.bigint "location_id"
     t.bigint "user_id"
@@ -42,10 +43,12 @@ ActiveRecord::Schema.define(version: 20180413215406) do
 
   create_table "locations", force: :cascade do |t|
     t.string "state"
+    t.string "location_name"
+    t.string "location_address"
     t.string "nearest_city"
-    t.string "location"
+    t.string "google_map_link"
     t.string "level"
-    t.integer "length"
+    t.string "length"
     t.string "main_picture_file_name"
     t.string "main_picture_content_type"
     t.integer "main_picture_file_size"
