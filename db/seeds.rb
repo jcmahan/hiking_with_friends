@@ -17,6 +17,18 @@
 User.destroy_all
 
 users = [{
+    name: "James Mahan",
+    email: "jcmahan@gmail.com",
+    password: "v!king",
+    hometown: "Los Angeles",
+    level: "expert",
+    profile_picture: File.new("#{Rails.root}/db/seedimages/me.jpg"),
+    contact: "917-408-3515",
+    facebook_url: "https://www.facebook.com/james.mahan",
+    instagram_url: "www.instagram.com./jcmahan73",
+    admin: "true"
+},
+    {
     name: "James Smith",
     email: "jsmith@fake.com",
     password: "cat",

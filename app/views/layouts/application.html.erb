@@ -8,29 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
-  <nav>
+    <div="top">
       <% if current_user %>
         Welcome, <%= current_user.name %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+          &nbsp;&nbsp;
           <%= link_to 'Log In', login_path %>
       <% else %>
+          &nbsp;&nbsp;
+          <%= link_to 'Log In', login_path %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <%= link_to 'Sign Up', new_user_path %>
       <% end %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-  </nav>
-
+      </div>
   <body>
     <%= yield %>
   <footer>
-
+  <nav>
   <ul class="nav nav-pills">
     <li role="home"> <%= link_to "Home", page_path(:home) %></li>
     <li role="about"><%= link_to "About HWF", '/pages/about' %></li>
     <li role="hikes"><%= link_to "Upcoming hikes", '/hikes/:id' %></li>
   </ul>
-
+  </nav>
   </footer>
   </body>
 </html>

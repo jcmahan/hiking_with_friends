@@ -3,10 +3,10 @@
 }
 
 #welcome_img {
-    height: 500px;
-    width: 375px;
-    background-image: url(waterfall.jpg);
-    background-size: contain;
+    height: 250px;
+    width: 750px;
+    background-image: url(AB_BNP_HikingBelowFayGlacier_2006-SG.jpg);
+    background-size: contain;  
     background-repeat: no-repeat;
     margin: 0 auto;
 }
