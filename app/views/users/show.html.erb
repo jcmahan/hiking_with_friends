@@ -1,1 +1,18 @@
-puts "Params hash look like this: #{params.to_s}"
+
+<h1><%= @user.name%></h1>
+
+<div class="profile">
+<%= image_tag @user.profile_picture.url, id: "avatar", class: "img-thumbnail" %>
+
+    <div class="basic_info">
+    <p>Phone number: <%= @user.contact %></p>
+    <p>Current Hometown:  <%= @user.hometown %></p>
+    <p>Experience level: <%= @user.level%>
+    </div> 
+
+    <div class="socials_info">
+    <p><%= link_to "Facebook", "http://#{@user.facebook_url}" %> </p>
+    <p><%= link_to "Instagram", "http://#{@user.instagram_url}" %> </p>
+    </div>
+
+</div>

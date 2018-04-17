@@ -8,6 +8,10 @@
         <%= f.email_field :email %>
     </div>
     <div>
+        <%= f.label :hometown, "Hiker's hometown:" %>
+        <%= f.text_field :hometown %>
+    </div>
+    <div>
         <%= f.label :password_digest, "Hiker's password:" %>
         <%= f.password_field :password_digest %>
     </div>
@@ -19,23 +23,24 @@
             <% end %>
         <% end %>
     </div>
-        <div>
-        <%= f.label :phone, "Hiker's phone:" %>
-        <%= f.text_field :phone %>
+    <div> 
+        <%= f.label :contact, "Hiker's phone:" %>
+        <%= f.text_field :contact %>
     </div>
     <div>
-        <%= f.label :name, "Hiker's Facebook:" %>
-        <%= f.url_field :name %>
+        <%= f.label :facebook_url, "Hiker's Facebook:" %>
+        <%= f.url_field :facebook_url %>
     </div>
     <div>
-        <%= f.label :name, "Hiker's Instagram:" %>
-        <%= f.url_field :name %>
+        <%= f.label :instagram_url, "Hiker's Instagram:" %>
+        <%= f.url_field :instagram_url, :value => "jsdkfkdsj" %>
     </div>
     <div>
-        <%= f.label :name, "Hiker's Profile Pic:" %>
+        <%= f.label :profile_picture, "Hiker's Profile Pic:" %>
         <%= f.file_field :profile_picture %><br><br>
 </ul>
 
-  <%= f.submit 'Create User!' %>
+<%= f.submit 'Create User!' %>
+
 <% end %>
 

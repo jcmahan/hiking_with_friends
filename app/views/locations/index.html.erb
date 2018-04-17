@@ -5,7 +5,10 @@
 		<li>Name:<p><%= l.location %></p></li>
 		<li>State<p><%= l.state %></p></li>
         <li>Nearest City<p><%= l.nearest_city %></p></li>
-		<%= image_tag main_picture.image.url %>
-		<%= link_to 'View location', location_path(location) %>
+		<%= image_tag l.main_picture.url, id: "main_picture", class: "img-thumbnail" %>
+		<br/>
+		<%= link_to "Hike Locations", locations_path %>
+		<br/>
+		<br/>
 	<% end %>
 </ul>

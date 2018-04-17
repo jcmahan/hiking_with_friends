@@ -62,18 +62,21 @@ locations = [
     location: "1234 Main St, Los Angeles, CA 90017",
     level: "novice",
     length: "2.1 km",
+    main_picture: File.new("#{Rails.root}/db/seedimages/LAWinter_2016.jpg"),
 }, {
     state: "CA",
     nearest_city: "San Francisco, CA",
     location: "5678 Main St, San Francisco, CA 94102",
     level: "intermediate",
     length: "3.4 km",
+    main_picture: File.new("#{Rails.root}/db/seedimages/SF-GG.jpg"),
 }, {
     state: "OR",
     nearest_city: "Bend, OR",
     location: "9123 Main St, Bend, OR, 97703",
     level: "expert",
     length: "10.5 km",
+    main_picture: File.new("#{Rails.root}/db/seedimages/Bend_Oregon.jpg"),
 }]
 
 Location.create locations

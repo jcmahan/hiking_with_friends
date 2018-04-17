@@ -10,9 +10,6 @@ class User < ApplicationRecord
     validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
 
     private
-    def user_params
-        params.require(:user).permit(:name, :email, :password_digest, )
-      end
     def set_defaults
         self.admin = false if self.admin.nil?
     end

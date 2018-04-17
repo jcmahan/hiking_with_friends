@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     resources :hikes, shallow: true
   end
   root 'pages#show', page: 'home'
-  get '/pages/:page', to: 'pages#show'
+  get '/pages/:page', to: 'pages#show', as: :page
 end

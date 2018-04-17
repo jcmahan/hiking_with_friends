@@ -13,6 +13,15 @@
 .jumbotron {
     text-align: center;
 } 
-footer {
-    display: inline-block;
+.profile {
+    display: flex;
+    justify-content: space-around; 
+}
+#avatar {
+    height: 250px;
+    width: 250px;
+}
+#main-picture.img-fluid { 
+    max-width: 50%;
+    height: auto; 
 }
