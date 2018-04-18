@@ -1,0 +1,14 @@
+<h1>Upcoming Hikes</h1>
+
+<ul>
+	<% @hikes.each do |h| %>
+		<li>Name: <p><%= link_to h.name, hike_path(h.id) %></p></li>
+		<li>Date: <p><%= h.date %></p></li>
+        <li>Host: <p><%= link_to h.user.name, user_path(h.user) %></p></li>
+        <li>Location: <p><%= link_to h.location.location_name, location_path(h.location) %></p></li>
+        <li>Hike Length: <p><%= h.location.length %></p></li>
+        <li>Hike Difficulty: <p><%= h.location.level %></p></li>
+		<br/>
+
+	<% end %>
+</ul>

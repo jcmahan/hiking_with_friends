@@ -1,0 +1,45 @@
+<% provide(:title, "Create New Location") %>
+<h4>Know a great hiking trail? Share it here with the group!</h4>
+
+<%= form_for(@location) do |f| %>
+    <div>
+        <%= f.label :location_name, "Trail's name:" %>
+        <%= f.text_field :location_name %>
+    </div>
+    <div>
+        <%= f.label :location_address, "Trail's address:" %>
+        <%= f.text_field :location_address %>
+    </div>
+    <div>
+        <%= f.label :nearest_city, "Closest big city:" %>
+        <%= f.text_field :nearest_city %>
+    </div>
+    <div>
+        <%= f.label :state, "State:" %>
+        <%= f.text_field :state %>
+    </div>
+    <div>
+        <%= f.label :level, "Trail's difficulty level:" %>
+        <%= f.select(:level) do %>
+            <% [['Novice', "Novice"], ['Intermediate', "Intermediate"], ['Expert', "Expert"], ['Sherpa', "Sherpa"]].each do |c| -%>
+                <%= content_tag(:option, c.first, value: c.last) %>
+            <% end %>
+        <% end %>
+    </div>
+    <div> 
+        <%= f.label :length, "Trail's length (indicate miles or km):" %>
+        <%= f.text_field :length %>
+    </div>
+    <div>
+        <%= f.label :google_map_link, "Google map link:" %>
+        <%= f.url_field :google_map_link, :value => "http://<fill in the rest>" %>
+    </div>
+    <div>
+        <%= f.label :main_picture, "Picture of the trail:" %>
+        <%= f.file_field :main_picture %><br><br>
+</ul>
+
+<%= f.submit 'Create Trail!' %>
+
+<% end %>
+

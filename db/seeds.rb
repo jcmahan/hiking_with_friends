@@ -25,7 +25,7 @@ users = [{
     profile_picture: File.new("#{Rails.root}/db/seedimages/me.jpg"),
     contact: "917-408-3515",
     facebook_url: "https://www.facebook.com/james.mahan",
-    instagram_url: "www.instagram.com./jcmahan73",
+    instagram_url: "https://www.instagram.com/jcmahan73",
     admin: "true"
 },
     {
@@ -70,7 +70,6 @@ Location.destroy_all
 locations = [
 {
     state: "CA",
-
     location_name: "downtown Los Angeles", 
     location_address: "1234 Main St, Los Angeles, CA 90017",
     nearest_city: "Los Angeles",
@@ -97,5 +96,18 @@ locations = [
     length: "10.5 km",
     main_picture: File.new("#{Rails.root}/db/seedimages/Bend_Oregon.jpg"),
 }]
-
 Location.create locations
+
+Hike.destroy_all
+
+h = User.create(name: "Daniel Miles", email: "damiles@me.com", password: "dog", hometown: "NYC", level: "intermediate",)
+bc = Location.create(state: "CA", location_name: "Beachwood Canyon", location_address: "2795 Woodshire Dr, Los Angeles, CA 90068", nearest_city: "Los Angeles, CA", google_map_link: "https://goo.gl/maps/3foW715qkF52", level: "intermediate", length: "3.4 km", main_picture: File.new("#{Rails.root}/db/seedimages/beechwood.jpg"))
+Hike.create(name: "Beechwood Canyon", date: "05/05/2018", user: h, location: bc)
+
+i = User.create(name: "JR Hillis", email: "juniorhillis@me.com", password: "diving02", hometown: "Kokomo, IN", level: "novice",)
+btn = Location.create(state: "CA", location_name: "Bridge to Nowhere", location_address: "Camp Bonita Road, San Gabriel Mountains National Monument, Azusa, CA 91702", nearest_city: "Los Angeles, CA", google_map_link: "https://goo.gl/maps/pTKpYJdCSzK2", level: "intermediate", length: "10 miles out and back", main_picture: File.new("#{Rails.root}/db/seedimages/Bridge_to_Nowhere.jpg"))
+Hike.create(name: "Bridge to Nowhere", date: "07/05/2018", user: i, location: btn)
+
+j = User.create(name: "Jim Moore", email: "jrmoore90046@me.com", password: "jennycherry", hometown: "Pendleton, OR", level: "novice",)
+rc = Location.create(state: "CA", location_name: "Runyon Canyon", location_address: "2000 N Fuller Ave, Los Angeles, CA 90046", nearest_city: "Los Angeles, CA", google_map_link: "https://goo.gl/maps/LDdvPXtg83v", level: "novice", length: "3 miles out and back", main_picture: File.new("#{Rails.root}/db/seedimages/runyon-canyon.jpg"))
+Hike.create(name: "Runyon Canyon", date: "17/05/2018", user: j, location: rc)

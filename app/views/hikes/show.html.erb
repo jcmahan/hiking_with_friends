@@ -1,0 +1,7 @@
+<h3>Upcoming Hike: <%= link_to @hike.name, hike_path(@hike.id) %></h3>
+
+    <div class="basic_info">
+    <p>Hike name: <%= @hike.name %></p>
+    <p>Date of hike: <%= @hike.date %></p>
+    <p>Hike organizer: <%= link_to @hike.user.name, user_path(@hike.user)%></p></li>
+    <p>Hike location: <%= link_to @hike.location.location_name, location_path(@hike.location)%></p>

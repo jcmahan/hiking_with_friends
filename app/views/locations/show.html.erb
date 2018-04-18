@@ -8,11 +8,12 @@
     <p>Nearest big city:  <%= @location.nearest_city %></p>
     <p>Difficulty: <%= @location.level%>
     <p>Length: <%= @location.length%>
-    
     </div> 
 
     <div class="socials_info">
     <p><%= link_to "Google Map", "#{@location.google_map_link}" %> </p>
     </div>
-
 </div>
+
+<h4> <%= link_to "Add a photo", edit_location_path(@location) %></h4>
+<h4> <%= link_to "Create a New Hike", new_location_hike_path(@location) %></h4>

@@ -1,71 +1,17 @@
-<% provide(:title, "Create A New Hike") %>
+
 <h2>Create your event!</h2>
 
-<%= form_for [@scientist, @experiment] do |f| %>
+<%= form_for [@user, @location, @hike] do |f| %>
     <div>
-        <%= f.label :title, "Title of Experiment:" %>
-        <%= f.text_field :title %>
-    </div>
-    <div>
-        <%= f.label :budget %>
-        <%= f.text_field :budget %>
-    </div>
-    <%= f.submit "Save New Experiment" %>
-<% end %>
-
-
-
-<%= form_for(@hike) do |f| %>
-    <div>
-        <%= f.label :name, "Hiker's name:" %>
+        <%= f.label :name, "Name of Your Hike:" %>
         <%= f.text_field :name %>
     </div>
     <div>
-        <%= f.label :email, "Hiker's e-mail address:" %>
-        <%= f.email_field :email %>
+        <%= f.label :date, "When are we hiking?" %>
+        <%= f.date_field :date %>
     </div>
     <div>
-        <%= f.label :hometown, "Hiker's hometown:" %>
-        <%= f.text_field :hometown %>
+        <%= f.hidden_field(:location, value: @location.id) %>
     </div>
-    <div>
-        <%= f.label :password_digest, "Hiker's password:" %>
-        <%= f.password_field :password_digest %>
-    </div>
-    <div>
-        <%= f.label :level, "Hiker's ability level:" %>
-        <%= f.select(:level) do %>
-            <% [['Novice', "Novice"], ['Intermediate', "Intermediate"], ['Expert', "Expert"], ['Sherpa', "Sherpa"]].each do |c| -%>
-                <%= content_tag(:option, c.first, value: c.last) %>
-            <% end %>
-        <% end %>
-    </div>
-    <div> 
-        <%= f.label :contact, "Hiker's phone:" %>
-        <%= f.text_field :contact %>
-    </div>
-    <div>
-        <%= f.label :facebook_url, "Hiker's Facebook:" %>
-        <%= f.url_field :facebook_url, :value => "http://www.facebook.com/...<your address here>" %>
-    </div>
-    <div>
-        <%= f.label :instagram_url, "Hiker's Instagram:" %>
-        <%= f.url_field :instagram_url, :value => "http://www.instagram.com/...<your address here>" %>
-    </div>
-    <div>
-        <%= f.label :profile_picture, "Hiker's Profile Pic:" %>
-        <%= f.file_field :profile_picture %><br><br>
-</ul>
-
-<%= f.submit 'Create User!' %>
-
+    <%= f.submit "Save New Hike" %>
 <% end %>
-
-    t.date "date"
-    t.bigint "location_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_hikes_on_location_id"
-    t.index ["user_id"], name: "index_hikes_on_user_id"
- 
