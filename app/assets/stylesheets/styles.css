@@ -5,7 +5,7 @@
 #welcome_img {
     height: 250px;
     width: 750px;
-    background-image: url(AB_BNP_HikingBelowFayGlacier_2006-SG.jpg);
+    background-image: image-url("AB_BNP_HikingBelowFayGlacier_2006-SG.jpg");
     background-size: contain;  
     background-repeat: no-repeat;
     margin: 0 auto;
