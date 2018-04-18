@@ -1,0 +1,18 @@
+<% provide(:title, "Edit Hike Details") %>
+<h3>Update your event here!</h3>
+
+    <%= form_for(@hike) do |f| %>
+
+    <%= form_for [@user, @location, @hike] do |f| %>
+    <div>
+        <%= f.label :name, "Name of Your Hike:" %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :date, "When are we hiking?" %>
+        <%= f.date_field :date %>
+    </div>
+    <%= f.submit "Update Your Hike!" %>
+<% end %>
+
+

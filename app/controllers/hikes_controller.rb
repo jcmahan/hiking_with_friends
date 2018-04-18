@@ -17,10 +17,15 @@ class HikesController < ApplicationController
     end
 
     def create
-        loc_id = params[:location_id]
-        @hike = Hike.new(params[:hike].delete(:location_id))
-        @loc = Location.find(loc_id).hikes << @hike
-        redirect_to root_path
+        @hike = Hike.new(params.require(:hike).permit(:name, :date)
+        @loc = Location.find(params[:location_id]).hikes << @hike
+
+        if @loc.save 
+            redirect_to hikes_path
+        else 
+            render :new 
+        end 
+
     end
     
     def index

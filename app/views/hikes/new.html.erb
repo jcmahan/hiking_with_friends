@@ -10,8 +10,5 @@
         <%= f.label :date, "When are we hiking?" %>
         <%= f.date_field :date %>
     </div>
-    <div>
-        <%= f.hidden_field(:location, value: @location.id) %>
-    </div>
     <%= f.submit "Save New Hike" %>
 <% end %>
