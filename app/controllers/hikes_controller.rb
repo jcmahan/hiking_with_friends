@@ -17,7 +17,7 @@ class HikesController < ApplicationController
     end
 
     def create
-        @hike = Hike.new(params.require(:hike).permit(:name, :date)
+        @hike = Hike.new(params.require(:hike).permit(:name, :date))
         @loc = Location.find(params[:location_id]).hikes << @hike
 
         if @loc.save 
