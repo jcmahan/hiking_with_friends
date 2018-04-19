@@ -1,14 +1,17 @@
+<h3 class="text-center">Create New Hike!</h3>
 
-<h2>Create your event!</h2>
-
-<%= form_for [@user, @location, @hike] do |f| %>
-    <div>
+<div class="col-sm-4 col-sm-offset-2">
+    <%= form_for [@user, @location, @hike] do |f| %>
         <%= f.label :name, "Name of Your Hike:" %>
         <%= f.text_field :name %>
-    </div>
-    <div>
+        <br/>
+        <br/>
         <%= f.label :date, "When are we hiking?" %>
         <%= f.date_field :date %>
     </div>
-    <%= f.submit "Save New Hike" %>
-<% end %>
+    <div class="submit_button">
+        <br/>
+        <br/>
+        <%= f.submit "Save New Hike" %>
+        <% end %>
+    </div>

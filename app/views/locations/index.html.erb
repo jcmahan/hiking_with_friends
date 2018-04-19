@@ -1,14 +1,25 @@
-<h1>Locations</h1>
+<h2 class="text-center">Hiking Locations</h2>
 
-<ul>
 	<% @locations.each do |l| %>
-		<li>Name: <p><%= link_to l.location_name, location_path(l.id) %></p></li>
-		<%= image_tag l.main_picture.url, id: "main_picture", class: "img-thumbnail" %>
-		<li>Address: <p><%= l.location_address %></p></li>
-        <li>Nearest City: <p><%= l.nearest_city %></p></li>
-		<li>State: <p><%= l.state %></p></li>
-		<li>Hike length: <p><%= l.length %></p></li>
-		<li>Hike difficulty: <p><%= l.level %></p></li>
-		<br/>
-	<% end %>
-</ul>
+	<ul>
+	    <div class="row">
+			<div class="col-sm-3 col-sm-offset-1">
+				<li>Name: <p><%= link_to l.location_name, location_path(l.id) %></p></li>
+				<%= image_tag l.main_picture.url, id: "main_picture", class: "img-thumbnail" %>
+			</div>
+			<div class="col-sm-3 col-sm-offset-1">
+				<br/>
+				<br/>
+				<li>Address: <p><%= l.location_address %></p></li>
+				<li>Nearest City: <p><%= l.nearest_city %></p></li>
+				<li>State: <p><%= l.state %></p></li>
+			</div>
+			<div class="col-sm-3 col-sm-offset-1">
+				<br/>
+				<br/>
+				<li>Hike length: <p><%= l.length %></p></li>
+				<li>Hike difficulty: <p><%= l.level %></p></li>
+			</div>
+		</div>
+	</ul>	
+<% end %>

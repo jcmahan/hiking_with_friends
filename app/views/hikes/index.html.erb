@@ -1,14 +1,28 @@
-<h1>Upcoming Hikes</h1>
+<h2 class="text-center">Upcoming Hikes</h2>
 
+<div class="hike_info">
 <ul>
 	<% @hikes.each do |h| %>
-		<li>Name: <p><%= link_to h.name, hike_path(h.id) %></p></li>
-		<li>Date: <p><%= h.date %></p></li>
-        <li>Host: <p><%= link_to h.user.name, user_path(h.user) %></p></li>
-        <li>Location: <p><%= link_to h.location.location_name, location_path(h.location) %></p></li>
-        <li>Hike Length: <p><%= h.location.length %></p></li>
-        <li>Hike Difficulty: <p><%= h.location.level %></p></li>
 		<br/>
-
+		<div class="col-sm-12 col-sm-offset-1">
+			<h4>Hike Name: <%= link_to h.name, hike_path(h.id) %></h4></li>
+		</div>
+    	<div class="col-sm-3 col-sm-offset-1">
+			<li>Date of Hike: <p><%= h.date %></p></li>
+		</div>
+    	<div class="col-sm-4">
+			<li>Host: <p><%= link_to h.user.name, user_path(h.user) %></p></li>
+			<li>Location: <p><%= link_to h.location.location_name, location_path(h.location) %></p></li>
+		</div>
+    	<div class="col-sm-3 col-sm-offset--1">
+			<li>Hike Length: <p><%= h.location.length %></p></li>
+			<li>Hike Difficulty: <p><%= h.location.level %></p></li>
+		</div>
+		<br/>
+		<br/>
 	<% end %>
+	<br/>
+	<br/>
+	<br/>
 </ul>
+</div>

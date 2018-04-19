@@ -1,5 +1,9 @@
 * {
     font-family: 'Poppins', sans-serif;
+    color: #5085A5; 
+}
+html, body {
+    height: 100vh;
 }
 
 #welcome_img {
@@ -11,7 +15,9 @@
     margin: 0 auto;
 }
 .jumbotron {
-    text-align: center;
+    text-align: center; 
+    background: #8FC1E3;
+
 } 
 .profile {
     display: flex;
@@ -19,9 +25,27 @@
 }
 #avatar {
     height: 250px;
+    width: 350px;
+}
+#main_picture { 
+    height: 250px;
     width: 250px;
 }
-#main-picture.img-fluid { 
-    max-width: 50%;
-    height: auto; 
+.link_container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 70px;
+}
+#bottom_nav {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: slategrey;
+    text-align: center;
+}
+
+#right-col p, #right-col img {
+    width: 100%;
 }

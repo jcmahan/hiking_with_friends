@@ -24,14 +24,12 @@
       </div>
   <body>
     <%= yield %>
-  <footer>
-  <nav>
-  <ul class="nav nav-pills">
-    <li role="home"> <%= link_to "Home", page_path(:home) %></li>
-    <li role="about"><%= link_to "About HWF", '/pages/about' %></li>
-    <li role="hikes"><%= link_to "Upcoming hikes", '/hikes/:id' %></li>
-  </ul>
-  </nav>
-  </footer>
+        <div id="bottom_nav">
+          <p role="home"> <%= link_to "Home", page_path(:home) %></p>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+          <p role="about"><%= link_to "About HWF", '/pages/about' %></p>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+          <p role="hikes"><%= link_to "Upcoming Hikes", '/hikes' %></p>
+        </div>
   </body>
 </html>

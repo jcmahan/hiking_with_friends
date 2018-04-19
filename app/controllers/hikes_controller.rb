@@ -8,8 +8,8 @@ class HikesController < ApplicationController
 
     def show
         @hike = Hike.find(params[:id])
-        puts @hike
-        puts params[:id]
+        @users = @hike.users
+
     end
 
     def edit
@@ -18,18 +18,39 @@ class HikesController < ApplicationController
 
     def create
         @hike = Hike.new(params.require(:hike).permit(:name, :date))
+        @hike.user = current_user
         @loc = Location.find(params[:location_id]).hikes << @hike
 
-        if @loc.save 
+        if @hike.save
             redirect_to hikes_path
         else 
             render :new 
         end 
 
     end
+
+    def update
+        @hike = Hike.find(params[:id])
+        if @hike.update_attributes(params.require(:hike).permit(:name, :date))
+            redirect_to hike_path(@hike)
+        else
+            render :edit
+        end
+    end
     
     def index
         @hikes = Hike.all
+    end
+
+    def destroy
+        @hike = Hike.find(params[:id])
+        @hike.destroy
+        redirect_to hike_path
+    end
+
+    private
+    def hike_params
+        params.require(:hike).permit(user_ids: [])
     end
 end
 
