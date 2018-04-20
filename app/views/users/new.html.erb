@@ -1,9 +1,9 @@
 <section id="hikes">
 <h2 class="text-center">Create your profile!</h2>
 
+<%= form_for(@user) do |f| %>
 <div class="row">
         <div class="col-sm-3 col-sm-offset-1">
-            <%= form_for(@user) do |f| %>
             <%= f.label :name, "Hiker's name:" %>
             <%= f.text_field :name %>
         </div>
@@ -58,9 +58,8 @@
 </div>
 <div class="row">    
         <div class="col-sm-12 col-sm-offset-5">
-        <%= f.submit "Create New Hiker" %>
+        <%= f.submit "Create Hiker's Info" %>
         </div>
 </div>
 <% end %>
 </section>
-
