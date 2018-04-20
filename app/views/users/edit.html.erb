@@ -1,9 +1,9 @@
 <section id="hikes">
 <h2 class="text-center">Update your profile!</h2>
 
+<%= form_for(@user) do |f| %>
 <div class="row">
         <div class="col-sm-3 col-sm-offset-1">
-            <%= form_for(@user) do |f| %>
             <%= f.label :name, "Hiker's name:" %>
             <%= f.text_field :name %>
         </div>
@@ -41,12 +41,12 @@
 <div class="row"> 
         <div class="col-sm-3 col-sm-offset-1">
             <%= f.label :facebook_url, "Hiker's Facebook user name:" %>
-            <%= f.url_field :facebook_url, :value =>  "", placeholder: "FB user name"  %>
+            <%= f.text_field :facebook_url, :value =>  "", placeholder: "FB user name"  %>
         </div>
 
         <div class="col-sm-3 col-sm-offset-1">
             <%= f.label :instagram_url, "Hiker's Instagram user name:" %>                
-            <%= f.url_field :instagram_url, :value => "", placeholder: "IG user name" %>
+            <%= f.text_field :instagram_url, :value => "", placeholder: "IG user name" %>
         </div>
 
         <div class="col-sm-3 col-sm-offset-1">

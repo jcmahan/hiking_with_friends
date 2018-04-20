@@ -35,6 +35,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find(params[:id])
+        if @user.update_attributes(params.require(:user).permit(:name, :email, :password_digest, :hometown, :level, :contact, :facebook_url, :instagram_url, :profile_picture))
+            redirect_to user_path(@user)
+        else
+            render :edit
+        end
+    end
+
     private
     def user_params
         params.require(:user).permit(:name, :email, :password_digest, :hometown, :level, :contact, :facebook_url, :instagram_url, :profile_picture)
