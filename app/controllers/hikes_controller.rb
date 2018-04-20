@@ -9,6 +9,7 @@ class HikesController < ApplicationController
     def show
         @hike = Hike.find(params[:id])
         @users = @hike.users
+        @locations = @hike.location
 
     end
 

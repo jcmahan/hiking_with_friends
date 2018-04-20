@@ -1,67 +1,66 @@
-<% provide(:title, "Create New User") %>
+<section id="hikes">
 <h2 class="text-center">Create your profile!</h2>
 
-<%= form_for(@user) do |f| %>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :name, "Hiker's name:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.text_field :name %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :email, "Hiker's e-mail address:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.email_field :email %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :hometown, "Hiker's hometown:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.text_field :hometown %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :password_digest, "Hiker's password:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.password_field :password_digest %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :level, "Hiker's ability level:" %>
+<div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= form_for(@user) do |f| %>
+            <%= f.label :name, "Hiker's name:" %>
+            <%= f.text_field :name %>
         </div>
-        <div class="col-sm-6 col-sm-offset-3">
-        <%= f.select(:level) do %>
-            <% [['Novice', "Novice"], ['Intermediate', "Intermediate"], ['Expert', "Expert"], ['Sherpa', "Sherpa"]].each do |c| -%>
-                <%= content_tag(:option, c.first, value: c.last) %>
+
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :email, "Hiker's e-mail address:" %>
+            <%= f.email_field :email %>
+        </div>
+
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :hometown, "Hiker's hometown:" %>
+            <%= f.text_field :hometown %>
+        </div>
+</div>
+<div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :password_digest, "Hiker's password:" %>
+            <%= f.password_field :password_digest %>
+        </div>
+ 
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :level, "Hiker's ability level:" %>
+            <%= f.select(:level) do %>
+                <% [['Novice', "Novice"], ['Intermediate', "Intermediate"], ['Expert', "Expert"], ['Sherpa', "Sherpa"]].each do |c| -%>
+                    <%= content_tag(:option, c.first, value: c.last) %>
+                <% end %>
             <% end %>
-        <% end %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3"> 
-        <%= f.label :contact, "Hiker's phone:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.text_field :contact %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :facebook_url, "Hiker's Facebook user name:" %>
-    </div>
-    <div class="col-sm-9 col-sm-offset-3"><%= 
-        f.url_field :facebook_url, :value =>  "", placeholder: "FB user name"  %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :instagram_url, "Hiker's Instagram user name:" %>                
-    </div>
-    <div class="col-sm-9 col-sm-offset-3">
-        <%= f.url_field :instagram_url, :value => "", placeholder: "IG user name" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.label :profile_picture, "Hiker's Profile Pic:" %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= f.file_field :profile_picture %><br><br>
-    </u>
+        </div>
+ 
+        <div class="col-sm-3 col-sm-offset-1"> 
+            <%= f.label :contact, "Hiker's phone:" %>
+            <%= f.text_field :contact %>
+        </div>
+</div>
+<div class="row"> 
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :facebook_url, "Hiker's Facebook user name:" %>
+            <%= f.text_field :facebook_url, :value =>  "", placeholder: "FB user name"  %>
+        </div>
 
-<%= f.submit 'Create User!' %>
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :instagram_url, "Hiker's Instagram user name:" %>                
+            <%= f.text_field :instagram_url, :value => "", placeholder: "IG user name" %>
+        </div>
 
+        <div class="col-sm-3 col-sm-offset-1">
+            <%= f.label :profile_picture, "Hiker's Profile Pic:" %>
+            <%= f.file_field :profile_picture %>
+            <br/>
+            <br/>
+        </div>
+</div>
+<div class="row">    
+        <div class="col-sm-12 col-sm-offset-5">
+        <%= f.submit "Create New Hiker" %>
+        </div>
+</div>
 <% end %>
+</section>
 

@@ -4,11 +4,22 @@
 
 <div class="row">
     <div class="col-sm-5 col-sm-offset-1">
-        <p>Date of hike: <%= @hike.date %> </p>
-        <p>Length of hike: <%= @hike.location.length %> </p>
-        <p>Difficulty level: <%=@hike.location.level %> </p>
-        <p>Hike organizer: <%= link_to @hike.user.name, user_path(@hike.user)%></p></li>
-        <p>Hike location: <%= link_to @hike.location.location_name, location_path(@hike.location)%></p>
+        <div class="row">
+            <div class="col-sm-4 my-labels">
+                <p>Date of hike:  </p>
+                <p>Length of hike:  </p>
+                <p>Difficulty level: </p>
+                <p>Hike organizer: </p>
+                <p>Hike location: </p>
+            </div>
+            <div class="col-sm-6">
+                <p><%= @hike.date %> </p>
+                <p><%= @hike.location.length %> </p>
+                <p><%=@hike.location.level %> </p>
+                <p><%= link_to @hike.user.name, user_path(@hike.user)%></p></li>
+                <p><%= link_to @hike.location.location_name, location_path(@hike.location)%></p>
+            </div>
+        </div>
     </div>
     <div class="col-sm-5" id="right-col">
         <p><img src="<%=@hike.location.main_picture%>" > </p>
@@ -18,13 +29,13 @@
 
 <div class="row">
 	<div class="col-sm-5 col-sm-offset-1 text-center">
-            <p>Other hikers:</p> 
+            <p>Hikers Attending:</p> 
             <% @users.each do |user|%>
             <li><%= link_to user.name, user_path(user) %></li>
             <% end %>
     </div>
 	<div class="col-sm-5 edit_links text-center">
-        <p> <%= link_to "Join This Hike", hike_signups_path(@hike), method: :post %></p>
+        <p> <% link_to("Join This Hike", hike_signups_path(@hike), method: :post) unless current_user.hikes.exists?(@hike.id) %> </p>
         <p> <%= link_to "Edit Your Hike", edit_hike_path(@hike) %></p>
         <p> <%= link_to "Cancel Your Hike", hike_path(@hike), 
                                                     :data => {  :confirm=> "You sure?!?!", 

@@ -3,7 +3,6 @@
   <head>
     <title>Hiking With Friends</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
@@ -24,12 +23,14 @@
       </div>
   <body>
     <%= yield %>
-        <div id="bottom_nav">
-          <p role="home"> <%= link_to "Home", page_path(:home) %></p>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-          <p role="about"><%= link_to "About HWF", '/pages/about' %></p>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
-          <p role="hikes"><%= link_to "Upcoming Hikes", '/hikes' %></p>
-        </div>
+  <br/>
+  <br/>
+  <div id="bottom_nav">
+    <p role="home"> <%= link_to "Home", page_path(:home) %></p>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+    <p role="about"><%= link_to "About HWF", '/pages/about' %></p>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+    <p role="hikes"><%= link_to "Upcoming Hikes", '/hikes' %></p>
+  </div>
   </body>
 </html>
