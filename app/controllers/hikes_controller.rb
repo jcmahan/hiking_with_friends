@@ -46,7 +46,7 @@ class HikesController < ApplicationController
     def destroy
         @hike = Hike.find(params[:id])
         @hike.destroy
-        redirect_to hike_path
+        redirect_to root_path
     end
 
     private
