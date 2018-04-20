@@ -1,28 +1,39 @@
 <h2 class="text-center">All about <%= link_to @location.location_name, location_path(@location.id) %>! </h2>
-<br/>
-<br/>
-<div id="row">
-    <div id="city_photo" class="col-sm-6 col-sm-offset-1">
-        <%= image_tag @location.main_picture.url %>
-        <p>Nearest big city:  <%= @location.nearest_city %></p>
-    </div>
-<div>
 
 <div id="row">
-    <div class="col-sm-3 col-sm-offset-1">
-        <p>Address: <%= @location.location_address %></p>
-        <p>Difficulty: <%= @location.level%>
-        <p>Length: <%= @location.length%>
-        <p><%= link_to "Google Map", "#{@location.google_map_link}" %> </p>
-        <p>Upcoming Hikes here: </p> 
-            <% @location.hikes.each do |hike| %>
-            <li><%= link_to hike.name, hike_path(hike) %></li>
-            <% end %>
-    </div> 
+    <div class="col-sm-12 text-center">
+    <h4> <%= link_to "Create a New Hike", new_location_hike_path(@location) %></h4>
+    </div>
 </div>
 
 <div id="row">
-    <div id="photo_links" class="col-sm-12">
-    <h4> <%= link_to "Create a New Hike", new_location_hike_path(@location) %></h4>
+    <div id="city_photo" class="col-sm-5 col-sm-offset-1">
+        <%= image_tag @location.main_picture.url %>
+        <p class="label-color">Nearest big city:</p>  <p><%= @location.nearest_city %></p>
+    </div>
+<div>
+
+<div class="row">
+    <div class="col-sm-5">
+            <div class="col-sm-4 my-labels">
+            <p>Difficulty: </p>
+            <p>Length: </p>
+            <p>Map: </p>
+            <p>Address: </p>
+            </div>
+    <div class="col-sm-6 col-sm-offset-1">
+        <p><%= @location.level%> </p>
+        <p><%= @location.length%> </p>
+        <p><%= link_to "Google Map", "#{@location.google_map_link}" %> </p> 
+        <p><%= @location.location_address %> </p>
+    </div> 
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+        <p>Upcoming Hikes here: </p>
+        <% @location.hikes.each do |hike| %>
+        <li><%= link_to hike.name, hike_path(hike) %></li>
+        <% end %>
     </div>
 </div>

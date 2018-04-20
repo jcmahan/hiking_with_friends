@@ -26,7 +26,9 @@
             <p>None Yet</p>
         <% else %>
             <% @user.created_hikes.each do |hike| %>
-                <li><%= link_to hike.name, hike_path(hike) %></li>
+                <ul>
+                    <li><%= link_to hike.name, hike_path(hike) %></li>
+                </ul>
             <% end %>
         <% end %>
     </div>
@@ -36,7 +38,9 @@
             <p>None Yet</p>
         <% else %>
             <% @user.hikes.each do |hike| %>
-                <li><%= link_to hike.name, hike_path(hike) %></li>
+                <ul>
+                    <li><%= link_to hike.name, hike_path(hike) %></li>
+                </ul>
             <% end %>
         <% end %>    
     </div>

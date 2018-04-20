@@ -26,16 +26,20 @@
         
     </div>
 </div>
-
+<hr>
 <div class="row">
 	<div class="col-sm-5 col-sm-offset-1 text-center">
-            <p>Hikers Attending:</p> 
-            <% @users.each do |user|%>
-            <li><%= link_to user.name, user_path(user) %></li>
-            <% end %>
+            <p class="label-color">Hikers Attending:</p>
+            <ul> 
+                <% @users.each do |user|%>
+                    <li><%= link_to user.name, user_path(user) %></li> 
+                <% end %>
+            </ul>
     </div>
 	<div class="col-sm-5 edit_links text-center">
-        <p> <% link_to("Join This Hike", hike_signups_path(@hike), method: :post) unless current_user.hikes.exists?(@hike.id) %> </p>
+        <% unless current_user.hikes.exists?(@hike.id) %>
+            <p><%= link_to("Join This Hike", hike_signups_path(@hike), method: :post) %></p>
+        <% end %>
         <p> <%= link_to "Edit Your Hike", edit_hike_path(@hike) %></p>
         <p> <%= link_to "Cancel Your Hike", hike_path(@hike), 
                                                     :data => {  :confirm=> "You sure?!?!", 

@@ -65,5 +65,16 @@ html, body {
     width: 100%;
 }
 .my-labels p {
-    color: grey;
+    color: #687864;
+}
+ul {
+    list-style: none;
+    padding-left: 0; 
+}
+.label-color {
+    color: #687864;
+}
+
+#submit-new {
+    margin-top: 50px;
 }
