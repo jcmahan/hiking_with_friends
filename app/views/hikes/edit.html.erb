@@ -1,16 +1,16 @@
 <h3 class="text-center">Update <%= link_to @hike.name, hike_path(@hike.id) %> details here! </h3>
 
-    <div class="col-sm-6 col-sm-offset-3">
-        <br/>
         <%= form_for [@user, @location, @hike] do |f| %>
-        <%= f.label :name, "Name of Your Hike:" %>
-        <%= f.text_field :name %>
-        <%= f.label :date, "When are we hiking?" %>
-        <%= f.date_field :date %>
-    </div>
-    <div class="col-sm-6 col-sm-offset-3">
-        <br/>
-        <br/>
-        <%= f.submit "Update Your Hike!" %>
+        <div class="col-sm-4 col-sm-offset-2">
+            <%= f.label :name, "Name of Your Hike:" %>
+            <%= f.text_field :name %>
+            <br/>
+            <br/>
+            <%= f.label :date, "When are we hiking?" %>
+            <%= f.date_field :date %>
+        </div>
+        <div id="submit-new" class="col-sm-4 col-sm-offset-2">
+            <%= f.submit "Update Your Hike" %>
+        </div>
         <% end %>
     </div>
