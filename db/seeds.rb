@@ -25,8 +25,8 @@ users = [
         level: "novice",
         profile_picture: File.new(File.join(Rails.root, "public", "seedimages", "beach.jpg")),
         contact: "2125551212",
-        facebook_url: "www.facebook.com/jsmithBS",
-        instagram_url: "www.instagram.com./jsmithBS",
+        facebook_url: "jsmithBS",
+        instagram_url: "jsmithBS",
         admin: "true"
     },
     {
@@ -37,8 +37,8 @@ users = [
     level: "expert",
     profile_picture: File.new(File.join(Rails.root, "public", "seedimages", "me.jpg")),
     contact: "917-408-3515",
-    facebook_url: "https://www.facebook.com/james.mahan",
-    instagram_url: "https://www.instagram.com/jcmahan73",
+    facebook_url: "james.mahan",
+    instagram_url: "jcmahan73",
     admin: "true"
 }, {
     name: "Jon Johnson",
@@ -48,8 +48,8 @@ users = [
     level: "intermediate",
     profile_picture: File.new(File.join(Rails.root, "public", "seedimages", "onaboat.jpg")),
     contact: "9175551212",
-    facebook_url: "www.facebook.com/jjohnsonBS",
-    instagram_url: "www.instagram.com/jjohnsonBS",
+    facebook_url: "jjohnsonBS",
+    instagram_url: "johnsonBS",
     admin: "false"
 }, {
     name: "Mike Miller",
@@ -59,8 +59,8 @@ users = [
     level: "expert",
     profile_picture: File.new(File.join(Rails.root, "public", "seedimages", "clouds.jpg")),
     contact: "3235551212",
-    facebook_url: "www.facebook.com/mmillerBS",
-    instagram_url: "www.instagram.com//mmillerBS",
+    facebook_url: "mmillerBS",
+    instagram_url: "mmillerBS",
     admin: "false"
 }]
 
