@@ -115,5 +115,3 @@ Hike.create(name: "Bridge to Nowhere", date: "07/05/2018", user: i, location: bt
 j = User.create(name: "Jim Moore", email: "jrmoore90046@me.com", password: "jennycherry", hometown: "Pendleton, OR", level: "novice",)
 rc = Location.create(state: "CA", location_name: "Runyon Canyon", location_address: "2000 N Fuller Ave, Los Angeles, CA 90046", nearest_city: "Los Angeles, CA", google_map_link: "https://goo.gl/maps/LDdvPXtg83v", level: "novice", length: "3 miles out and back", main_picture: File.new(File.join(Rails.root, "public", "seedimages", "runyon-canyon.jpg")))
 Hike.create(name: "Runyon Canyon", date: "17/05/2018", user: j, location: rc)
-
-Signup.create
